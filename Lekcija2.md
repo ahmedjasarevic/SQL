@@ -4,33 +4,29 @@
 
 
 
-## Lekcija 1.
+## Lekcija 2.
 
-Find the title of each film 
-
-```bash
-SELECT Title FROM movies;
-```
-Find the director of each film
+Find the movie with a row id of 6 
 
 ```bash
-SELECT Director FROM movies;
+SELECT Title FROM movies WHERE ID = 6;
 ```
-
-Find the title and director of each film
+Find the movies released in the years between 2000 and 2010 
 
 ```bash
-SELECT Title,Director FROM movies;
+SELECT Title FROM movies WHERE Year >= 2000 AND Year <= 2010
 ```
 
-Find the title and year of each film
+Find the movies not released in the years between 2000 and 2010
 
 ```bash
-SELECT Title,Year FROM movies;
+SELECT Title FROM movies WHERE Year NOT BETWEEN  2000 AND 2010
 ```
 
-Find all the infromation about each film
+Find the first 5 Pixar movies and their release year
 
 ```bash
-SELECT * FROM movies;
+SELECT Title FROM movies WHERE ID >= 1 AND ID <= 5
 ```
+
+
