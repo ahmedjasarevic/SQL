@@ -4,29 +4,29 @@
 
 
 
-## Lekcija 2.
+## Lekcija 4.
 
-Find the movie with a row id of 6 
-
-```bash
-SELECT Title FROM movies WHERE ID = 6;
-```
-Find the movies released in the years between 2000 and 2010 
+List all directors of Pixar movies (alphabetically), without duplicates 
 
 ```bash
-SELECT Title FROM movies WHERE Year >= 2000 AND Year <= 2010
+ SELECT DISTINCT Director FROM movies ORDER BY Director ASC;
 ```
 
-Find the movies not released in the years between 2000 and 2010
-
+List the last four Pixar movies released (ordered from most recent to least) 
 ```bash
-SELECT Title FROM movies WHERE Year NOT BETWEEN  2000 AND 2010
+SELECT  Title FROM movies ORDER BY Year DESC LIMIT 4;
 ```
 
-Find the first 5 Pixar movies and their release year
+List the first five Pixar movies sorted alphabetically
 
 ```bash
-SELECT Title FROM movies WHERE ID >= 1 AND ID <= 5
+SELECT  Title FROM movies ORDER BY Title ASC LIMIT 5;
+```
+
+List the next five Pixar movies sorted alphabetically
+
+```bash
+SELECT  Title FROM movies ORDER BY Title ASC LIMIT 5,5;
 ```
 
 
