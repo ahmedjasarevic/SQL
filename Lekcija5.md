@@ -21,17 +21,17 @@ ORDER BY LATITUDE DESC;
 List all the cities west of Chicago, ordered from west to east
 
 ```bash
-DODAJ
+// SELECT City FROM north_american_cities WHERE LONGITUDE < -87.629798
 ```
 
 List the two largest cities in Mexico (by population)
 
 ```bash
-DODAJ
+SELECT City FROM north_american_cities WHERE Country = "Mexico" ORDER BY POPULATION DESC LIMIT 2;
 ```
 
 List the third and fourth largest cities (by population) in the United States and their population
 
 ```bash
-DODAJ
+SELECT City,Population FROM north_american_cities WHERE Country = "United States" ORDER BY POPULATION DESC LIMIT 2,2;
 ```
