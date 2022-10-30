@@ -4,29 +4,30 @@
 
 
 
-## Lekcija 2.
+## Lekcija 3.
 
-Find the movie with a row id of 6 
+Find all the Toy Story movies
 
 ```bash
-SELECT Title FROM movies WHERE ID = 6;
+SELECT Title FROM movies WHERE Title LIKE "Toy%";
 ```
-Find the movies released in the years between 2000 and 2010 
+Find all the movies directed by John Lasseter 
 
 ```bash
-SELECT Title FROM movies WHERE Year >= 2000 AND Year <= 2010
-```
-
-Find the movies not released in the years between 2000 and 2010
-
-```bash
-SELECT Title FROM movies WHERE Year NOT BETWEEN  2000 AND 2010
+SELECT Title FROM movies WHERE Director LIKE "John%";
 ```
 
-Find the first 5 Pixar movies and their release year
+Find all the movies (and director) not directed by John Lasseter 
 
 ```bash
-SELECT Title FROM movies WHERE ID >= 1 AND ID <= 5
+SELECT Title FROM movies WHERE Director NOT LIKE "John%";
+```
+
+Find all the WALL-* movies
+
+```bash
+SELECT Title FROM movies WHERE Title  LIKE "Wall%";
+
 ```
 
 
