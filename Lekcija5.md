@@ -4,33 +4,34 @@
 
 
 
-## Lekcija 1.
+## Lekcija 5.
 
-Find the title of each film 
+List all the Canadian cities and their populations
 
 ```bash
-SELECT Title FROM movies;
+SELECT City,Population FROM north_american_cities WHERE Country = "Canada";
 ```
-Find the director of each film
+Order all the cities in the United States by their latitude from north to south
 
 ```bash
-SELECT Director FROM movies;
-```
-
-Find the title and director of each film
-
-```bash
-SELECT Title,Director FROM movies;
+SELECT City FROM north_american_cities WHERE Country = "United States" 
+ORDER BY LATITUDE DESC;
 ```
 
-Find the title and year of each film
+List all the cities west of Chicago, ordered from west to east
 
 ```bash
-SELECT Title,Year FROM movies;
+DODAJ
 ```
 
-Find all the infromation about each film
+List the two largest cities in Mexico (by population)
 
 ```bash
-SELECT * FROM movies;
+DODAJ
+```
+
+List the third and fourth largest cities (by population) in the United States and their population
+
+```bash
+DODAJ
 ```
