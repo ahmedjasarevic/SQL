@@ -19,6 +19,19 @@
 
 - [Lekcija 9.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija9.md)
 
+- [Lekcija 10.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija10.md)
+
+- [Lekcija 11.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija11.md)
+
+- [Lekcija 12.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija12.md)
+
+- [Lekcija 13.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija13.md)
+
+- [Lekcija 14.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija14.md)
+
+- [Lekcija 15.](https://github.com/ahmedjasarevic/SQL/blob/main/Lekcija15.md)
+
+
 
 
 

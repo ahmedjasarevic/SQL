@@ -4,33 +4,18 @@
 
 
 
-## Lekcija 9.
 
-List all movies and their combined sales in millions of dollars
+## Lekcija 12.
+
+Find the number of movies each director has directed 
 
 ```bash
-SELECT title, (domestic_sales + international_sales) / 1000000 AS millions
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
+SELECT Director,COUNT(Director) FROM movies GROUP BY DIRECTOR;
 ```
 
-List all movies and their ratings in percent
+Find the total domestic and international sales that can be attributed to each director
 ```bash
-SELECT title, rating * 10 AS Percent
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
-```
-
-List all movies that were released on even number years
-
-```bash
-SELECT title
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id
-    WHERE Year % 2 == 0;
+SELECT Director,SUM(Domestic_sales+International_sales) AS total FROM movies JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id GROUP BY DIRECTOR;
 ```
 
 

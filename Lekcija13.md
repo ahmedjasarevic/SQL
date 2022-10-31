@@ -4,34 +4,21 @@
 
 
 
-## Lekcija 9.
+## Lekcija 13.
 
-List all movies and their combined sales in millions of dollars
-
-```bash
-SELECT title, (domestic_sales + international_sales) / 1000000 AS millions
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
-```
-
-List all movies and their ratings in percent
-```bash
-SELECT title, rating * 10 AS Percent
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
-```
-
-List all movies that were released on even number years
+Add the studio's new production, Toy Story 4 to the list of movies (you can use any director) 
 
 ```bash
-SELECT title
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id
-    WHERE Year % 2 == 0;
+INSERT INTO movies (Id,Title,Director)
+VALUES(15,"Toy Story 4","Dan Schanlon");
 ```
+
+Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+```bash
+INSERT INTO Boxoffice (Movie_id,Rating,Domestic_sales,International_sales)
+VALUES(15,8.7,3400000,2700000);
+```
+
 
 
 

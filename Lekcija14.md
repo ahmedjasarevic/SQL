@@ -4,33 +4,29 @@
 
 
 
-## Lekcija 9.
+## Lekcija 14.
 
-List all movies and their combined sales in millions of dollars
+The director for A Bug's Life is incorrect, it was actually directed by John Lasseter 
 
 ```bash
-SELECT title, (domestic_sales + international_sales) / 1000000 AS millions
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
+UPDATE movies
+SET Director = "John Lasseter"
+WHERE Id = 2;
 ```
 
-List all movies and their ratings in percent
+The year that Toy Story 2 was released is incorrect, it was actually released in 1999 
 ```bash
-SELECT title, rating * 10 AS Percent
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
+UPDATE movies
+SET Year = 1999
+WHERE Id = 3;
 ```
 
-List all movies that were released on even number years
+Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich 
 
 ```bash
-SELECT title
-FROM movies
-  JOIN boxoffice
-    ON movies.id = boxoffice.movie_id
-    WHERE Year % 2 == 0;
+UPDATE movies
+SET Title = "Toy Story 3", Director = "Lee Unkrich"
+WHERE Id = 11;
 ```
 
 
