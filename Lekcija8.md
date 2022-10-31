@@ -4,30 +4,19 @@
 
 
 
-## Lekcija 3.
+## Lekcija 8.
 
-Find all the Toy Story movies
-
-```bash
-SELECT Title FROM movies WHERE Title LIKE "Toy%";
-```
-Find all the movies directed by John Lasseter 
+find the name and role of all employees who have not been assigned to a building
 
 ```bash
-SELECT Title FROM movies WHERE Director LIKE "John%";
+SELECT Role,Name FROM employees WHERE Building IS NULL;
 ```
-
-Find all the movies (and director) not directed by John Lasseter 
+Find the names of the buildings that hold no employees 
 
 ```bash
-SELECT Title FROM movies WHERE Director NOT LIKE "John%";
+SELECT Building_name FROM Buildings LEFT JOIN Employees ON BuildinG_name = Building WHERE Building IS NULL;
 ```
 
-Find all the WALL-* movies
 
-```bash
-SELECT Title FROM movies WHERE Title  LIKE "Wall%";
-
-```
 
 
