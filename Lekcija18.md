@@ -3,19 +3,18 @@
 
 
 
-## Lekcija 15.
+## Lekcija 18.
 
-this database is getting too big, lets remove all movies that were released before 2005.
+We've sadly reached the end of our lessons, lets clean up by removing the Movies table 
 
 ```bash
-DELETE FROM movies
-WHERE Year < 2005
+ DROP TABLE IF EXISTS MOVIES;
 ```
 
-Andrew Stanton has also left the studio, so please remove all movies directed by him.
+
+And drop the BoxOffice table as well 
 ```bash
-DELETE FROM movies
-WHERE Director = "Andrew Stanton";
+ DROP TABLE IF EXISTS Boxoffice;
 ```
 
 
