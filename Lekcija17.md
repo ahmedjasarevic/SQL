@@ -3,19 +3,20 @@
 
 
 
-## Lekcija 15.
+## Lekcija 17.
 
-this database is getting too big, lets remove all movies that were released before 2005.
+Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.  
 
 ```bash
-DELETE FROM movies
-WHERE Year < 2005
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT; 
 ```
 
-Andrew Stanton has also left the studio, so please remove all movies directed by him.
+Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English
 ```bash
-DELETE FROM movies
-WHERE Director = "Andrew Stanton";
+ALTER TABLE Movies
+ADD Language TEXT
+DEFAULT ENGLISH;
 ```
 
 
