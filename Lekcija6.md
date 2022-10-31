@@ -4,33 +4,34 @@
 
 
 
-## Lekcija 1.
+## Lekcija 6.
 
-Find the title of each film 
-
-```bash
-SELECT Title FROM movies;
-```
-Find the director of each film
+Find the domestic and international sales for each movie
 
 ```bash
-SELECT Director FROM movies;
+ELECT Movies.Id, Movies.Title,Boxoffice.Domestic_sales, Boxoffice.International_sales
+FROM Movies INNER JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+ORDER BY Id ASC;
 ```
-
-Find the title and director of each film
+Show the sales numbers for each movie that did better internationally rather than domestically  
 
 ```bash
-SELECT Title,Director FROM movies;
+SELECT Movies.Title, Boxoffice.Domestic_sales, Boxoffice.International_sales
+FROM Movies 
+JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+WHERE Boxoffice.Domestic_sales < Boxoffice.International_sales;
 ```
 
-Find the title and year of each film
+List all the movies by their ratings in descending order 
 
 ```bash
-SELECT Title,Year FROM movies;
+SELECT Movies.Title, Boxoffice.Rating
+FROM Movies 
+JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+ORDER BY Rating DESC;
 ```
 
-Find all the infromation about each film
 
-```bash
-SELECT * FROM movies;
-```
