@@ -33,3 +33,47 @@ ORDER BY LONGITUDE ASC;
 List the two largest cities in Mexico (by population) // SELECT City FROM north_american_cities WHERE Country = "Mexico" ORDER BY POPULATION DESC LIMIT 2;
 List the third and fourth largest cities (by population) in the United States and their population // SELECT City,Population FROM north_american_cities WHERE Country = "United States" ORDER BY POPULATION DESC LIMIT 2,2;
 
+LEKCIJA 6.
+Find the domestic and international sales for each movie // SELECT Movies.Id, Movies.Title,Boxoffice.Domestic_sales, Boxoffice.International_sales
+FROM Movies INNER JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+ORDER BY Id ASC;
+Show the sales numbers for each movie that did better internationally rather than domestically  // SELECT Movies.Title, Boxoffice.Domestic_sales, Boxoffice.International_sales
+FROM Movies 
+JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+WHERE Boxoffice.Domestic_sales < Boxoffice.International_sales;
+List all the movies by their ratings in descending order // SELECT Movies.Title, Boxoffice.Rating
+FROM Movies 
+JOIN Boxoffice 
+ON Movies.Id = Boxoffice.Movie_id
+ORDER BY Rating DESC;
+
+LEKCIJA 7.
+
+Find the list of all buildings that have employees  // SELECT DISTINCT building FROM employees;
+Find the list of all buildings and their capacity // SELECT  Building_name,Capacity FROM Buildings;
+List all buildings and the distinct employee roles in each building (including empty buildings) // SELECT DISTINCT building_name, role 
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building;
+
+LEKCIJA 8.
+find the name and role of all employees who have not been assigned to a building // SELECT Role,Name FROM employees WHERE Building IS NULL;
+Find the names of the buildings that hold no employees // SELECT Building_name FROM Buildings LEFT JOIN Employees ON BuildinG_name = Building WHERE Building IS NULL;
+
+LEKCIJA 9.
+
+List all movies and their combined sales in millions of dollars // SELECT title, (domestic_sales + international_sales) / 1000000 AS millions
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id;
+List all movies and their ratings in percent //  SELECT title, rating * 10 AS Percent
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id;
+List all movies that were released on even number years //  SELECT title
+FROM movies
+  JOIN boxoffice
+    ON movies.id = boxoffice.movie_id
+    WHERE Year % 2 == 0;
