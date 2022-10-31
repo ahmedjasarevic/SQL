@@ -4,30 +4,26 @@
 
 
 
-## Lekcija 3.
+## Lekcija 11.
 
-Find all the Toy Story movies
 
-```bash
-SELECT Title FROM movies WHERE Title LIKE "Toy%";
-```
-Find all the movies directed by John Lasseter 
+Find the number of Artists in the studio (without a HAVING clause) 
 
 ```bash
-SELECT Title FROM movies WHERE Director LIKE "John%";
+ SELECT COUNT(ROLE) FROM employees WHERE ROLE LIKE "ARTIST";
 ```
-
-Find all the movies (and director) not directed by John Lasseter 
+Find the number of Employees of each role in the studio 
 
 ```bash
-SELECT Title FROM movies WHERE Director NOT LIKE "John%";
+SELECT Role,COUNT(ROLE) FROM employees GROUP BY ROLE;
 ```
 
-Find all the WALL-* movies
+Find the total number of years employed by all Engineers 
 
 ```bash
-SELECT Title FROM movies WHERE Title  LIKE "Wall%";
-
+ SELECT Role,SUM(Years_employed) FROM employees GROUP BY ROLE HAVING ROLE LIKE "ENGINEER";
 ```
+
+
 
 
