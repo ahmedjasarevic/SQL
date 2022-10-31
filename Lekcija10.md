@@ -4,29 +4,25 @@
 
 
 
-## Lekcija 4.
+## Lekcija 10.
 
-List all directors of Pixar movies (alphabetically), without duplicates 
-
-```bash
- SELECT DISTINCT Director FROM movies ORDER BY Director ASC;
-```
-
-List the last four Pixar movies released (ordered from most recent to least) 
-```bash
-SELECT  Title FROM movies ORDER BY Year DESC LIMIT 4;
-```
-
-List the first five Pixar movies sorted alphabetically
+Find the longest time that an employee has been at the studio
 
 ```bash
-SELECT  Title FROM movies ORDER BY Title ASC LIMIT 5;
+ SELECT MAX(Years_employed) FROM employees;
 ```
 
-List the next five Pixar movies sorted alphabetically
+For each role, find the average number of years employed by employees in that role 
+```bash
+ SELECT Role,AVG(Years_employed) FROM employees GROUP BY Role;
+```
+
+Find the total number of employee years worked in each building 
 
 ```bash
-SELECT  Title FROM movies ORDER BY Title ASC LIMIT 5,5;
+ SELECT Building,SUM(Years_employed) FROM employees GROUP BY Building;
 ```
+
+
 
 
