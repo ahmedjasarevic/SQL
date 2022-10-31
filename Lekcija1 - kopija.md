@@ -4,33 +4,16 @@
 
 
 
-## Lekcija 1.
+## Lekcija 12.
 
-Find the title of each film 
-
-```bash
-SELECT Title FROM movies;
-```
-Find the director of each film
+Find the number of movies each director has directed 
 
 ```bash
-SELECT Director FROM movies;
+SELECT Director,COUNT(Director) FROM movies GROUP BY DIRECTOR;
 ```
-
-Find the title and director of each film
+Find the total domestic and international sales that can be attributed to each director
 
 ```bash
-SELECT Title,Director FROM movies;
+SELECT Director,SUM(Domestic_sales+International_sales) AS total FROM movies JOIN Boxoffice ON Movies.Id = Boxoffice.Movie_id GROUP BY DIRECTOR;
 ```
 
-Find the title and year of each film
-
-```bash
-SELECT Title,Year FROM movies;
-```
-
-Find all the infromation about each film
-
-```bash
-SELECT * FROM movies;
-```
