@@ -4,29 +4,27 @@
 
 
 
-## Lekcija 2.
+## Lekcija 7.
 
-Find the movie with a row id of 6 
-
-```bash
-SELECT Title FROM movies WHERE ID = 6;
-```
-Find the movies released in the years between 2000 and 2010 
+Find the list of all buildings that have employees  
 
 ```bash
-SELECT Title FROM movies WHERE Year >= 2000 AND Year <= 2010
+SELECT DISTINCT building FROM employees;
 ```
-
-Find the movies not released in the years between 2000 and 2010
+Find the list of all buildings and their capacity
 
 ```bash
-SELECT Title FROM movies WHERE Year NOT BETWEEN  2000 AND 2010
+SELECT  Building_name,Capacity FROM Buildings;
 ```
 
-Find the first 5 Pixar movies and their release year
+List all buildings and the distinct employee roles in each building (including empty buildings)
 
 ```bash
-SELECT Title FROM movies WHERE ID >= 1 AND ID <= 5
+SELECT DISTINCT building_name, role 
+FROM buildings 
+  LEFT JOIN employees
+    ON building_name = building;
 ```
+
 
 
