@@ -77,3 +77,18 @@ FROM movies
   JOIN boxoffice
     ON movies.id = boxoffice.movie_id
     WHERE Year % 2 == 0;
+
+LLEKCIJA 10.
+
+Find the longest time that an employee has been at the studio // SELECT MAX(Years_employed) FROM employees;
+For each role, find the average number of years employed by employees in that role //  SELECT Role,AVG(Years_employed) FROM employees GROUP BY Role;
+Find the total number of employee years worked in each building // 
+ SELECT Building,SUM(Years_employed) FROM employees GROUP BY Building;
+
+LEKCIJA 11.
+
+Find the number of Artists in the studio (without a HAVING clause)  // SELECT COUNT(ROLE) FROM employees WHERE ROLE LIKE "ARTIST";
+Find the number of Employees of each role in the studio // SELECT Role,COUNT(ROLE) FROM employees GROUP BY ROLE;
+Find the total number of years employed by all Engineers // SELECT Role,SUM(Years_employed) FROM employees GROUP BY ROLE HAVING ROLE LIKE "ENGINEER";
+
+
