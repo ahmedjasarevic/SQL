@@ -3,22 +3,21 @@
 
 
 
-## Lekcija 15.
+## Lekcija 16.
 
-this database is getting too big, lets remove all movies that were released before 2005.
+Create a new table named Database with the following columns:
+– Name A string (text) describing the name of the database
+– Version A number (floating point) of the latest version of this database
+– Download_count An integer count of the number of times this database was downloaded
+This table has no constraints. 
 
 ```bash
-DELETE FROM movies
-WHERE Year < 2005
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
 ```
-
-Andrew Stanton has also left the studio, so please remove all movies directed by him.
-```bash
-DELETE FROM movies
-WHERE Director = "Andrew Stanton";
-```
-
-
 
 
 
